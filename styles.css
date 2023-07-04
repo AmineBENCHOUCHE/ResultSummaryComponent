@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --percentage_hsl: 0.05;
+}
+
+body {
+  margin: 0px 0px;
+  padding: 0;
+  min-width: 375px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+.attribution {
+  font-size: 15px;
+  text-align: center;
+  padding-top: 10px;
+  width: 100vw;
+  margin: 5px auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+h1 {
+  color: hsl(241, 100%, 89%);
+}
+.result {
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  border-radius: 0 0 25px 25px;
+  min-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.percentage-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(
+    -180deg,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+}
+#percentage {
+  color: hsl(241, 100%, 89%);
+  padding: 0;
+}
+#score {
+  color: white;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  font-weight: 800;
+}
+.text-score {
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  margin: 10px 0;
+}
+.description-result {
+  color: hsl(241, 100%, 89%);
+  font-weight: 500;
+  max-width: 300px;
+  margin: 0 0 40px 0;
+}
+
+/* Summary */
+/*Genaral*/
+#summary {
+  margin: 20px 20px;
+  color: hsla(224, 30%, 27%, 0.9);
+  font-weight: 700;
+}
+.category {
+  display: flex;
+  gap: 10px;
+}
+.category img {
+  background-color: transparent;
+}
+.percentage {
+  color: hsla(224, 30%, 27%, 0.7);
+  font-weight: 700;
+}
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+}
+.summary-category {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 7px 20px;
+  padding: 5px 20px;
+  font-weight: 700;
+}
+.score-category {
+  color: hsl(224, 30%, 27%);
+  font-weight: 700;
+}
+
+.score {
+  display: flex;
+  gap: 5px;
+}
+/* Categories Couleurs*/
+.reaction {
+  background-color: hsla(0, 100%, 67%, var(--percentage_hsl));
+}
+.memory {
+  background-color: hsla(39, 100%, 56%, var(--percentage_hsl));
+}
+.verbal {
+  background-color: hsla(166, 100%, 37%, var(--percentage_hsl));
+}
+.visual {
+  background-color: hsla(234, 85%, 45%, var(--percentage_hsl));
+}
+.reaction .category {
+  color: hsla(0, 100%, 67%, 0.8);
+}
+.memory .category {
+  color: hsla(39, 100%, 56%, 0.8);
+}
+.verbal .category {
+  color: hsl(166, 100%, 37%, 0.8);
+}
+.visual .category {
+  color: hsl(234, 85%, 45%, 0.8);
+}
+
+button {
+  margin: 20px 25px;
+  width: 325px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: hsl(224, 30%, 27%);
+  color: hsl(221, 100%, 96%);
+  font-size: 18px;
+}
