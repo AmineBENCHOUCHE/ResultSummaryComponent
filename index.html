@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Results summary component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href= https://fonts.google.com/specimen/Hanken+Grotesk
+    rel='stylesheet' />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Results summary component</title>
 
-  Your Result
-  76
-  of 100
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Amine Benchouceh</a>.
+    </div>
+    <article>
+      <section class="result">
+        <h1>Your Result</h1>
+        <div class="percentage-result">
+          <p id="score">76</p>
+          <p id="percentage">of 100</p>
+        </div>
+        <p class="text-score">Great</p>
+        <p class="description-result">
+          You scored higher than 65% of the people who have taken these tests
+        </p>
+      </section>
+      <section class="summary">
+        <p id="summary">Summary</p>
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <div class="summary-category reaction">
+          <div class="category">
+            <i class="reaction"></i>
+            <p>Reaction</p>
+          </div>
+          <p class="score-category score-reaction">80</p>
+          <p class="percentage">/ 100</p>
+        </div>
+        <div class="summary-category memory">
+          <div class="category">
+            <i class="memory"></i>
+            <p>Memory</p>
+          </div>
+          <p class="score-category score-memory">92</p>
+          <p class="percentage">/ 100</p>
+        </div>
+        <div class="summary-category verbal">
+          <div class="category">
+            <i class="verbal"></i>
+            <p>Verbal</p>
+          </div>
+          <p class="score-category score-verbal">61</p>
+          <p class="percentage">/ 100</p>
+        </div>
+        <div class="summary-category visual">
+          <div class="category">
+            <i class="visual"></i>
+            <p>Visual</p>
+          </div>
+          <p class="score-category score-visual">72</p>
+          <p class="percentage">/ 100</p>
+        </div>
+      </section>
+      <button>Continue</button>
+    </article>
+  </body>
 </html>
