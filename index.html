@@ -105,7 +105,7 @@
       decay: 0.94,
       startVelocity: 20,
       shapes: ["star"],
-      colors: ["hsl(185, 95%, 45%, 0.5)","hsla(0, 100%, 67%, 1)", "hsla(39, 100%, 56%, 1)", "hsla(256, 72%, 46%, 1)" ],
+      colors: ["hsl(185, 95%, 55%, 1)","hsla(0, 100%, 50%, 1)", "hsla(39, 100%, 50%, 1)", "hsla(256, 72%, 56%, 1)" ],
     };
 
 const button = document.querySelector(".confetti-button");
@@ -123,8 +123,8 @@ button.addEventListener("click", () => {
   function shoot() {
     confetti({
       ...defaults,
-      particleCount: 300,
-      scalar: 1.2,
+      particleCount: 500,
+      scalar: 1.5,
       shapes: ["star"],
     });
 
@@ -132,7 +132,7 @@ button.addEventListener("click", () => {
       ...defaults,
       particleCount: 100,
       scalar: 1.75,
-      shapes: ["circle"],
+      shapes: ["square"],
     });
    
     
