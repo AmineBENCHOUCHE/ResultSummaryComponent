@@ -103,9 +103,9 @@
       ticks: 50,
       gravity: 0,
       decay: 0.94,
-      startVelocity: 30,
+      startVelocity: 20,
       shapes: ["star"],
-      colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+      colors: ["hsl(185, 95%, 45%, 0.5)","hsla(0, 100%, 67%, 1)", "hsla(39, 100%, 56%, 1)", "hsla(256, 72%, 46%, 1)" ],
     };
 
 const button = document.querySelector(".confetti-button");
@@ -123,7 +123,7 @@ button.addEventListener("click", () => {
   function shoot() {
     confetti({
       ...defaults,
-      particleCount: 400,
+      particleCount: 300,
       scalar: 1.2,
       shapes: ["star"],
     });
@@ -131,7 +131,7 @@ button.addEventListener("click", () => {
     confetti({
       ...defaults,
       particleCount: 100,
-      scalar: 2.75,
+      scalar: 1.75,
       shapes: ["circle"],
     });
    
@@ -140,8 +140,7 @@ button.addEventListener("click", () => {
   setTimeout(shoot, 0);
   setTimeout(shoot, 400);
   setTimeout(shoot, 800);
-  setTimeout(shoot, 1000);
-  setTimeout(shoot, 1200);
+ 
   setTimeout(function() {
        container.classList.remove("fade-away");
        container.classList.add('fade-in');
