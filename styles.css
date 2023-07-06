@@ -287,7 +287,7 @@ button {
   }
   .fade-away {
     opacity: 0;
-    transition: opacity 1.4s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
   }
   .fade-in {
     opacity: 1;
@@ -302,5 +302,4 @@ button {
     -webkit-background-clip: text;
     color: transparent;
   }
-
-
+}
