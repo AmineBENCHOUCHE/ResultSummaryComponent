@@ -6,6 +6,10 @@
 
 :root {
   --percentage_hsl: 0.05;
+  --color-reaction: hsla(0, 100%, 67%, var(--percentage_hsl));
+  --color-memory: hsla(39, 100%, 56%, var(--percentage_hsl));
+  --color-verbal: hsla(166, 100%, 37%, var(--percentage_hsl));
+  --color-visual: hsla(234, 85%, 45%, var(--percentage_hsl));
 }
 
 body {
@@ -109,6 +113,12 @@ h1 {
   margin: 7px 20px;
   padding: 5px 20px;
   font-weight: 700;
+  background: linear-gradient(45deg, var(--color-reaction) 5px, transparent 5px)
+      0 0,
+    /* linear-gradient(45deg, var(--color-reaction) 5px, transparent 5px) 0 100%, */
+      linear-gradient(-45deg, var(--color-reaction) 5px, transparent 7px) 0 100%,
+    linear-gradient(135deg, var(--color-reaction) 5px, transparent 7px) 0 100%,
+    linear-gradient(-135deg, var(--color-reaction) 5px, transparent 7px) 0 100%;
 }
 .score-category {
   color: hsl(224, 30%, 27%);
@@ -120,16 +130,48 @@ h1 {
   gap: 5px;
 }
 /* Categories Couleurs*/
-.reaction {
+#reaction {
+  background: linear-gradient(45deg, var(--color-reaction) 5px, transparent 7px)
+      0 0,
+    /* linear-gradient(45deg, var(--color-reaction) 5px, transparent 5px) 0 100%, */
+      linear-gradient(-45deg, var(--color-reaction) 5px, transparent 7px) 0 100%,
+    linear-gradient(135deg, var(--color-reaction) 5px, transparent 7px) 0 100%,
+    linear-gradient(-135deg, var(--color-reaction) 5px, transparent 7px) 0 100%;
   background-color: hsla(0, 100%, 67%, var(--percentage_hsl));
 }
-.memory {
+#memory {
+  background: linear-gradient(
+        45deg,
+        var(var(--color-memory)) 5px,
+        transparent 5px
+      )
+      0 0,
+    /* linear-gradient(45deg, var(var(--color-memory)) 5px, transparent 5px) 0 100%, */
+      linear-gradient(-45deg, var(var(--color-memory)) 5px, transparent 7px) 0
+      100%,
+    linear-gradient(135deg, var(var(--color-memory)) 5px, transparent 7px) 0
+      100%,
+    linear-gradient(-135deg, var(var(--color-memory)) 5px, transparent 7px) 0
+      100%;
   background-color: hsla(39, 100%, 56%, var(--percentage_hsl));
 }
-.verbal {
+#verbal {
+  background: linear-gradient(45deg, var(--color-verbal) 5px, transparent 7px) 0
+      0,
+    linear-gradient(-45deg, var(--color-verbal) 5px, transparent 7px) 0 100%,
+    linear-gradient(135deg, var(--color-verbal) 5px, transparent 7px) 0 100%,
+    linear-gradient(-135deg, var(--color-verbal) 5px, transparent 7px) 0 100%;
   background-color: hsla(166, 100%, 37%, var(--percentage_hsl));
 }
-.visual {
+#visual {
+  background: linear-gradient(45deg, var(--color-visual) 5px, transparent 7px) 0
+      0,
+    linear-gradient(-45deg, var(var(--color-visual)) 5px, transparent 7px) 0
+      100%,
+    linear-gradient(135deg, var(var(--color-visual)) 5px, transparent 7px) 0
+      100%,
+    linear-gradient(-135deg, var(var(--color-visual)) 5px, transparent 7px) 0
+      100%;
   background-color: hsla(234, 85%, 45%, var(--percentage_hsl));
 }
 .reaction .category {
@@ -153,6 +195,37 @@ button {
   background-color: hsl(224, 30%, 27%);
   color: hsl(221, 100%, 96%);
   font-size: 18px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.button-wrapper canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.confetti-button {
+  width: 220px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background-image: linear-gradient(to right, #fe148d, #0000ff);
+  color: white;
+  font-size: large;
+  font-weight: 200;
+  letter-spacing: 1.2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.fade-away {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 
 /* Media query */
@@ -209,5 +282,13 @@ button {
   button {
     width: calc(100% - 40px);
     margin-top: 40px;
+  }
+  .fade-away {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .fade-in {
+    opacity: 1;
+    transition: opacity 3.5s ease-in;
   }
 }

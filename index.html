@@ -17,6 +17,7 @@
     <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-ExtraBold.ttf" />
     <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-Medium.ttf" />
     
+    
 
 
 
@@ -25,13 +26,14 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    <div class="attribution">
+    <div class="button-wrapper">
+      <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Amine Benchouche</a>.
     </div>
-    <article>
+    <article id="scoreCard">
       <section class="result">
         <h1>Your Result</h1>
         <div class="percentage-result">
@@ -45,10 +47,9 @@
       </section>
       <section class="summary">
         <p id="summary">Summary</p>
-
-        <div class="summary-category reaction">
+        <div id="reaction" class="summary-category reaction">
           <div class="category">
-            <img class="reaction" src="/assets/images/icon-reaction.svg" alt="icon for reaction category"></img>
+            <img class="reaction" src="./assets/images/icon-reaction.svg" alt="icon for reaction category"></img>
             <p>Reaction</p>
           </div>
           <div class="score">
@@ -56,7 +57,7 @@
             <p class="percentage">/ 100</p>
           </div>
         </div>
-        <div class="summary-category memory">
+        <div id="memory" class="summary-category memory">
           <div class="category">
             <img class="memory" src="./assets/images/icon-memory.svg" alt="icon for memory category"></img>
             <p>Memory</p>
@@ -67,7 +68,7 @@
             <p class="percentage">/ 100</p>
           </div>
         </div>
-        <div class="summary-category verbal">
+        <div id="verbal" class="summary-category verbal">
           <div class="category">
             <img class="verbal" src="./assets/images/icon-verbal.svg" alt="icon for verbal category"></img>
             <p>Verbal</p>
@@ -77,7 +78,7 @@
             <p class="percentage">/ 100</p>
           </div>
         </div>
-        <div class="summary-category visual">
+        <div id="visual" class="summary-category visual">
           <div class="category">
             <img class="visual" src="./assets/images/icon-visual.svg" alt="icon for visual category"></img>
             <p>Visual</p>
@@ -87,8 +88,73 @@
             <p class="percentage">/ 100</p>
           </div>
         </div>
-        <button>Continue</button>
-      </section>
-    </article>
+          <button class="confetti-button">Congratulations &#127881;</button>
+        </section>
+      </article>
+    
+    </div>
+   
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+
+          
+      let defaults = {
+      spread: 360,
+      ticks: 50,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      shapes: ["star"],
+      colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+    };
+
+const button = document.querySelector(".confetti-button");
+button.addEventListener("click", () => {
+  
+  let canvas = document.createElement("canvas");
+  let container = document.querySelector(".button-wrapper");
+  container.classList.add("fade-away");
+  canvas.width = 1000;
+  canvas.height = 1000;
+  container.appendChild(canvas);
+
+  let confetti_button = confetti.create(canvas);
+  confetti_button().then(() => container.removeChild(canvas));
+  function shoot() {
+    confetti({
+      ...defaults,
+      particleCount: 400,
+      scalar: 1.2,
+      shapes: ["star"],
+    });
+
+    confetti({
+      ...defaults,
+      particleCount: 100,
+      scalar: 2.75,
+      shapes: ["circle"],
+    });
+   
+    
+  }
+  setTimeout(shoot, 0);
+  setTimeout(shoot, 400);
+  setTimeout(shoot, 800);
+  setTimeout(shoot, 1000);
+  setTimeout(shoot, 1200);
+  setTimeout(function() {
+       container.classList.remove("fade-away");
+       container.classList.add('fade-in');
+       
+      
+    }, 1500);
+  
+  container.classList.remove('fade-in');
+
+
+});
+
+
+    </script>
   </body>
 </html>
