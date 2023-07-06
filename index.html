@@ -16,6 +16,8 @@
     <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-Bold.ttf" />
     <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-ExtraBold.ttf" />
     <link rel='stylesheet' href="/assets/fonts/static/HankenGrotesk-Medium.ttf" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
     
     
 
@@ -28,10 +30,17 @@
   <body>
     <div class="button-wrapper">
       <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a><br></a
-      >Coded by <a href="https://www.linkedin.com/in/amine-benchouche" target="_blank">Amine Benchouche</a>
+      <p>
+
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor
+
+        </a>
+          <br>
+      </p>
+        
+      <p> Coded by <a id="profil-link" href="https://www.linkedin.com/in/amine-benchouche/">   
+  Amine Benchouche <i class="fab fa-linkedin"></i>  </a></p>
     </div>
     <article id="scoreCard">
       <section class="result">
@@ -111,47 +120,52 @@
 const button = document.querySelector(".confetti-button");
 button.addEventListener("click", () => {
   
-  let canvas = document.createElement("canvas");
-  let container = document.querySelector(".button-wrapper");
-  container.classList.add("fade-away");
-  canvas.width = 1000;
-  canvas.height = 1000;
-  container.appendChild(canvas);
+    let canvas = document.createElement("canvas");
+    let container = document.querySelector(".button-wrapper");
+    container.classList.add("fade-away");
+    canvas.width = 1000;
+    canvas.height = 1000;
+    container.appendChild(canvas);
 
-  let confetti_button = confetti.create(canvas);
-  confetti_button().then(() => container.removeChild(canvas));
-  function shoot() {
-    confetti({
-      ...defaults,
-      particleCount: 500,
-      scalar: 1.5,
-      shapes: ["star"],
-    });
+    let confetti_button = confetti.create(canvas);
+    confetti_button().then(() => container.removeChild(canvas));
+    function shoot() {
+      confetti({
+        ...defaults,
+        particleCount: 500,
+        scalar: 1.5,
+        shapes: ["star"],
+      });
 
-    confetti({
-      ...defaults,
-      particleCount: 100,
-      scalar: 1.75,
-      shapes: ["square"],
-    });
-   
-    
-  }
-  setTimeout(shoot, 0);
-  setTimeout(shoot, 400);
-  setTimeout(shoot, 800);
- 
-  setTimeout(function() {
-       container.classList.remove("fade-away");
-       container.classList.add('fade-in');
-       
+      confetti({
+        ...defaults,
+        particleCount: 100,
+        scalar: 1.75,
+        shapes: ["square"],
+      });
       
-    }, 1500);
-  
-  container.classList.remove('fade-in');
+      
+    }
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 400);
+    setTimeout(shoot, 800);
 
+    setTimeout(function() {
+          container.classList.remove("fade-away");
+          container.classList.add('fade-in');
+          
+        
+      }, 1500);
 
-});
+    container.classList.remove('fade-in');
+
+  }
+);
+let profil_link = document.getElementById('profil-link')
+profil_link.onmouseover = function(){
+  profil_link.classList.add('changeColor');
+  console.log('profil_link');
+}
 
 
     </script>

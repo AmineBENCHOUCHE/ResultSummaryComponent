@@ -26,15 +26,11 @@ body {
   padding-top: 10px;
   width: 100vw;
   margin: 5px auto;
-  background: linear-gradient(45deg, #fe148d 0%, #0000ff);
-  -webkit-background-clip: text;
-  color: transparent;
 }
-.attribution a {
-  background: linear-gradient(45deg, #fe148d 0%, #0000ff);
-  -webkit-background-clip: text;
-  color: transparent;
+#profil-link,
+a {
   padding: 5px;
+  text-decoration: none;
 }
 
 h1 {
@@ -297,4 +293,14 @@ button {
     opacity: 1;
     transition: opacity 2.5s ease-in;
   }
-}
+  a {
+    text-decoration: underline;
+  }
+  #profil-link {
+    /* outline: 2px dashed rgb(3, 3, 3); */
+    background: linear-gradient(to right, #fe148d 0%, #0000ff);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+
