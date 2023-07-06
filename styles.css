@@ -21,14 +21,20 @@ body {
 }
 
 .attribution {
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
   padding-top: 10px;
   width: 100vw;
   margin: 5px auto;
+  background: linear-gradient(45deg, #fe148d 0%, #0000ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  background: linear-gradient(45deg, #fe148d 0%, #0000ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 5px;
 }
 
 h1 {
